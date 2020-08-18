@@ -1,7 +1,7 @@
 ---
 title: "Minikube 사용 가이드"
 date: 2020-08-14 15:50:00
-categories: k8s tutorial
+tags: k8s
 ---
 
 # 1. 개요
@@ -18,7 +18,7 @@ Minikube 라는 단어에서 유추할 수 있듯이, 나만의 작은 쿠버네
 
 # 2. Prerequisite
 
-Minikube 는 linux, macos, windows 를 모두 호환하는 프로젝트이지만, 본 문서에서는 linux kernel 기반 os 를 기준으로 하겠습니다.
+Minikube 는 linux, macos, windows 를 모두 호환하는 프로젝트이지만, 본 문서에서는 linux kernel 기반 os 를 기준으로 작성되었습니다. 특히 windows 의 경우에는 다른 부분이 다소 있을 수 있으니 주의바랍니다.
 
 ## 하드웨어
 
@@ -29,7 +29,7 @@ Minikube 는 linux, macos, windows 를 모두 호환하는 프로젝트이지만
 
 ## 소프트웨어
 
-- 다음 Container or virtual machine manager 중 하나
+- 지원하는 Container or virtual machine manager 중 최소 하나
   - Docker, Hyperkit, Hyper-V, KVM, Parallels, Podman, VirtualBox, or VMWare
 - curl
 - kubectl
@@ -117,7 +117,7 @@ $ kubectl config view
 ```
 $ kubectl get nodes
 $ kubectl get cs
-$ kubectl get po -A
+$ kubectl get pod -A
 ```
 - 위 명령이 정상적으로 수행된다면, 이제 kubectl 을 사용한 k8s resource 관리를 자유롭게 할 수 있습니다.
 
