@@ -1,5 +1,5 @@
 ---
-title: "Minikube GPU 사용 가이드"
+title: "Minikube GPU Tutorial"
 date: 2020-08-18 15:49:00
 tags: k8s
 ---

@@ -1,5 +1,5 @@
 ---
-title: "Minikube 사용 가이드"
+title: "Minikube Tutorial"
 date: 2020-08-14 15:50:00
 tags: k8s
 ---
