@@ -166,7 +166,7 @@ root user 로 변경한 뒤, minikube 를 생성합니다. kubernetes-version �
 ```shell
 $ sudo su
 
-# minikube start --driver=none --kubernetes-version=v1.16.3
+$ minikube start --driver=none --kubernetes-version=v1.16.3
 ```
 
 `feature-gates=DevicePlugins=true` parameter 를 추가해주어야 한다는 문서도 존재하지만, DevicePlugin 은 k8s v1.10 부터 beta version 으로 변경되었으므로 v1.16.3 버전에서는 따로 추가해주지 않아도 괜찮습니다.
@@ -209,7 +209,7 @@ nvidia 에서 DevicePlugin Framework 에 맞춰 gpu 사용을 위해 개발한 n
 $ kubectl create -f https://raw.githubusercontent.com/NVIDIA/k8s-device-plugin/1.0.0-beta4/nvidia-device-plugin.yml
 ```
 
-nvidia-device-plugin 은 daemonset 으로 생성되지만, minikube 를 1 node 로 생성했으므로 1 개의 pod 이 `RUNNING` 상태로 생성되었는지 확인핳ㅂ니다.
+nvidia-device-plugin 은 daemonset 으로 생성되지만, minikube 를 1 node 로 생성했으므로 1 개의 pod 이 `RUNNING` 상태로 생성되었는지 확인합니다.
 ```shell
 $ kubectl get pod -A | grep nvidia
 ```
