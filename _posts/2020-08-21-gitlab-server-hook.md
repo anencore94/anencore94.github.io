@@ -169,7 +169,32 @@ $ vi pre-receive
 
 -----
 
-# 7. 참조
+# 7. 예시
+
+- 위의 스크립트를 사용하면 케이스에 따라 다음과 같은 응답이 서버로부터 return 되는 것을 확인하실 수 있습니다.
+
+### 1) 1 Commit, Valid
+![성공](/assets/images/2020-08-21/success.png){: width="90%" height="90%"}
+
+- push 가 정상적으로 수행되었습니다.
+
+### 2) 1 Commit, Invalid
+![실패](/assets/images/2020-08-21/fail.png){: width="90%" height="90%"}
+
+- push 가 reject 되었습니다.
+
+### 3) Several Commits, Valid
+![many_commits](/assets/images/2020-08-21/many_commits.png){: width="90%" height="90%"}
+
+- 여러 커밋들을 모두 체크하며, 모두 Valid 하여 push 가 정상적으로 수행되었습니다.
+
+### 4) New branch
+![new_-_branch](/assets/images/2020-08-21/new_branch.png){: width="90%" height="90%"}
+- 새로운 브랜치는 반드시 push 가 정상적으로 수행됩니다.
+
+-----
+
+# 8. 참조
 
 - https://github.com/gitlabhq/gitlabhq/blob/master/doc/administration/server_hooks.md
 - https://docs.gitlab.com/ce/administration/server_hooks.html
