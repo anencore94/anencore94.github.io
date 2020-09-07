@@ -5,7 +5,7 @@ tags: DataScience
 ---
 
 > 해당 글은 Jeremy Jordan 의 블로그 포스트 [Effective testing for machine learning systems](https://www.jeremyjordan.me/testing-ml/)을 번역한 글입니다. <br>
-> 좋은 내용이라 개인 공부할 겸 번역을 진행하였으며, Jeremy Jordan 의 허락을 받아 본 포스트를 게시합니다.<br>
+> 좋은 내용이라 개인 공부할 겸 번역을 진행하였습니다.<br>
 > 단, 한국에서도 영어 단어 자체로 많이 쓰이는 단어들은 굳이 번역하지 않고 그대로 사용하였습니다.
 
 
