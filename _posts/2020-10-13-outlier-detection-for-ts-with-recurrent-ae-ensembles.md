@@ -51,7 +51,7 @@ tags: 논문리뷰
 - 하지만, *Chen et al., 2017*에서 제시된 autoencoder ensemble 구조는 sequential data 를 사용하기에는 적합하지 않음
     - 따라서 sequential data 에 사용할 수 있는 autoencoder ensemble framework 를 제시하겠음
 
-    ![fully-vs-sparsely](/assets/images/2020-10-14/sparsely-connected.png){: width="70%" height="70%"}
+    ![fully-vs-sparsely](/assets/images/2020-10-13/sparsely-connected.png){: width="70%" height="70%"}
 
 -----
 
@@ -62,26 +62,26 @@ tags: 논문리뷰
 - seq2seq model 자체로도 time series outlier detection 을 위한 autoencoder 로 쓸 수 있음
     - decoder 에서는 reverse order time series 로 복원
 
-    ![seq2seq](/assets/images/2020-10-14/seq2seq.png){: width="90%" height="90%"}
+    ![seq2seq](/assets/images/2020-10-13/seq2seq.png){: width="90%" height="90%"}
 
     - 하지만, 이 구조에서는 autoencoder ensemble 을 쓸 수가 없는 게 RNN unit 들을 연결하는 connection 하나를 제거해버리면 아예 train 을 진행할 수 없는 문제가 있음
 - 따라서 Recurrent Skip Connection Networks (RSCNs) 로 RNN unit 간의 추가적인 연결을 한 구조를 사용하자
     - 각 RNN unit 이 직전 hidden state (`h_t-1`) 로만 연결된 게 아니라, L 번째 과거 hidden state (`h_t-L`) 와도 연결됨
 
         <div style="width:40%; margin:0 auto;" align="center" markdown="1">
-        ![h_t](/assets/images/2020-10-14/h_t.png)
+        ![h_t](/assets/images/2020-10-13/h_t.png)
         </div>
 
     - 이러한 RSCN 에서 기존 rnn unit 간 original connection 또는 skip connection 중 최대 1 connection 만 drop 한 sparsely connected rnn 구조로 변환하면 다음과 같이 되어서, train 을 진행할 수 있음
         - e.g.) `w_t :=  (w^f_t, w^f'_t) in {(0,1), (1,0), (1,1)}`
 
         <div style="width:55%; margin:0 auto;" align="center" markdown="1">
-        ![h_t_w_t](/assets/images/2020-10-14/h_t_w_t.png)
+        ![h_t_w_t](/assets/images/2020-10-13/h_t_w_t.png)
         </div>
         - rnn unit 간 connection 최대 2 개인데, random 하게 drop 하되, drop 하지 않거나 하나만 drop 하는 구조
 
     <div style="width:90%; margin:0 auto;" align="center" markdown="1">
-    ![rscn-srnn](/assets/images/2020-10-14/rscn-srnn.png)
+    ![rscn-srnn](/assets/images/2020-10-13/rscn-srnn.png)
     </div>
 
 ## 3.2. S-RNN Autoencoder Ensembles
@@ -92,7 +92,7 @@ tags: 논문리뷰
 ### 3.2.1. Independent Framework
 
 <div style="width:60%; margin:0 auto;" align="center" markdown="1">
-![if](/assets/images/2020-10-14/if.png)
+![if](/assets/images/2020-10-13/if.png)
 </div>
 
 - N 개의 S-RNN autoencoder 가 있으며, 각각은 완전히 independent 하게 각각의 loss function 을 최소화하는 방향으로 학습
@@ -101,13 +101,13 @@ tags: 논문리뷰
 ### 3.2.2. Shared Framework
 
 <div style="width:60%; margin:0 auto;" align="center" markdown="1">
-![sf](/assets/images/2020-10-14/sf.png)
+![sf](/assets/images/2020-10-13/sf.png)
 </div>
 
 - Multi-task learning 과 비슷하게 각 encoder 의 output vector 를 linear combination (weight 은 trainable parameter)한 shared layer 를 하나 두고, 적당히 결합한 loss function 을 최소화하도록 jointly train
 
 <div style="width:45%; margin:0 auto;" align="center" markdown="1">
-![j](/assets/images/2020-10-14/j.png)
+![j](/assets/images/2020-10-13/j.png)
 </div>
 
 - L1 regularization term 은 shared hidden state 를 sparse 하게 만들어서 특정 encoder 가 overfit 하는 걸 막아줌
@@ -143,7 +143,7 @@ tags: 논문리뷰
 ### 4.2.1. Accuracy
 
 <div style="width:100%; margin:0 auto;" align="center" markdown="1">
-![acc](/assets/images/2020-10-14/accuracy.png)
+![acc](/assets/images/2020-10-13/accuracy.png)
 </div>
 
 - pr-auc 는 ML 이나 DL 이나 큰 차이 없지만, roc-auc 는 DL 이 훨씬 나음
