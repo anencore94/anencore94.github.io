@@ -15,7 +15,7 @@ tags: Linux
 - 소프트웨어 혹은 관련 문서 등 소프트웨어 생명 주기에서 만들어지고 사라지는 모든 결과물에 대해 그 형상을 기록하고 변경 내역을 관리하는 작업을 쉽게 해주는 툴을 형상관리 툴이라 부르며, CVS, SVN 등을 거쳐 현재는 Git 이 대세가 되었습니다.
 
 <div style="width:70%; margin:0 auto;" align="center" markdown="1">
-![git-vs-svn](/assets/images/2021-04-18/git-vs-svn.png)
+![git-vs-svn](/assets/images/2021-04-18/git-vs-svn.PNG)
 *(2005 년 탄생한 git 의 검색 트렌드 변화)*
 </div>
 
@@ -34,8 +34,9 @@ tags: Linux
 - Git 을 사용해봤다 혹은 사용하고 있다하는 사람들이 실제 작업하며 흔히 사용하는 커맨드들은 대부분 **porcelain** 명령어입니다.
 
 <div style="width:70%; margin:0 auto;" align="center" markdown="1">
-![porcelain & plumbing](/assets/images/2021-04-18/plu-por.png)
+![porcelain & plumbing](/assets/images/2021-04-18/plu-por.PNG)
 *(porcelain & plumbing)*
+</div>
 
 - 하지만 이 둘을 strictly exclusive 하게 구분하기에는 살짝 애매한 부분이 있습니다. : [stackoverflow Q&A](https://stackoverflow.com/questions/39847781/which-are-the-plumbing-and-porcelain-commands/39848056#39848056))
 
